@@ -2,6 +2,7 @@ package com.exostaz.leetcode.chapter01;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -40,6 +41,19 @@ class SlidingWindowTest {
     assertEquals(9, slidingWindow.zeroFilledSubarray(nums));
     nums = new int[] { 2, 10, 2019 };
     assertEquals(0, slidingWindow.zeroFilledSubarray(nums));
+  }
+
+  @Test
+  void twoSum() {
+    int[] nums = { 2, 7, 11, 15 };
+    int[] expected = { 0, 1 };
+    assertTrue(Arrays.equals(expected, slidingWindow.twoSum(nums, 9)));
+    nums = new int[] { 3, 2, 4 };
+    expected = new int[] { 1, 2 };
+    assertTrue(Arrays.equals(expected, slidingWindow.twoSum(nums, 6)));
+    nums = new int[] { 3, 3 };
+    expected = new int[] { 0, 1 };
+    assertTrue(Arrays.equals(expected, slidingWindow.twoSum(nums, 6)));
   }
 
 }

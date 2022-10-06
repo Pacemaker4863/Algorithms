@@ -43,4 +43,17 @@ public class SlidingWindow {
     return ans;
   }
 
+  public int[] twoSum(int[] nums, int target) {
+    for (int i = 0, j = i + 1; i < nums.length + 1; i++, j = i + 1) {
+      while (i < j && j < nums.length) {
+        if (nums[i] + nums[j] == target) {
+          return new int[] { i, j };
+        } else {
+          j++;
+        }
+      }
+    }
+    return null;
+  }
+
 }
